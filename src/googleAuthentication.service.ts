@@ -8,8 +8,8 @@ export class GoogleAuthenticationService {
   oauthClient: Auth.OAuth2Client;
   constructor(
   ) {
-    const clientID = '895790358985-v6uio7n5e6j2ehpl4nv3t0kg2vq3mub8.apps.googleusercontent.com'
-    const clientSecret = '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'
+    const clientID = process.env.GOOGLE_CLIENT_ID
+    const clientSecret = process.env.GOOGLE_SECRET
     this.oauthClient = new google.auth.OAuth2(clientID, clientSecret)
   }
   async authenticate(token: string) {
